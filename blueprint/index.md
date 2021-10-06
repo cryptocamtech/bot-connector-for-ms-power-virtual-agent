@@ -43,7 +43,7 @@ The application receives the utterances from the Messenger through Genesys Bot C
 * **AWS Lambda** - A serverless computing service for running code without creating or maintaining the underlying infrastructure. In this solution, you use Lambda functions to build a bot interpreter application in Python.
 * **Amazon API Gateway** - An AWS service for using APIs in a secure and scalable environment. In this solution, the API Gateway exposes a REST endpoint that is protected by an API key. Requests that come to the API Gateway are forwarded to an AWS Lambda.
 * **REST API client** - A method or tool, such as Postman or YARC, that invoke REST API services. In this solution, you send an HTTP PUT request with JSON payload to the Bot Connector API that creates the bot list.
-* **Web Messaging and Messenger** - Web Messaging provides enhanced experience to your customers who visit your site to have asynchronous conversations with a bot or agent. Messenger provides a predefined message window and launcher button which customers use to interact with bots and agents. In this solution, a Messenger must be deployed to your website.
+* **Web Messaging and Messenger** - Web Messaging provides enhanced experience to your customers who visit your site to have asynchronous conversations with a bot or agent. Messenger provides a predefined message window and launcher button which customers use to interact with bots and agents. In this solution, a Messenger configuration must be deployed to your website.
   
 
 ## Prerequisites
