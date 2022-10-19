@@ -7,7 +7,7 @@ from botocore.client import Config
 from botocore.exceptions import ClientError
 
 # some general constants
-DYNAMODB_SESSIONS_TABLE_NAME = "automate-byob2ibm-sessions"
+DYNAMODB_SESSIONS_TABLE_NAME = "automate-byob2ms-sessions"
 
 
 def aws_expire_at_seconds(num_seconds):

@@ -58,9 +58,8 @@ def lambda_handler(event, context):
         else:
             # Didn't have a session - we'll treat this as a new one
             print("Didn't have a session - we'll treat this as a new one")
-
-        print ('Calling create_conversation_session()')
-        session_id = create_conversation_session(bot_session)
+            session_id = create_conversation_session(bot_session)
+            print("serviceSessionId - " + session_id)
 
         print("Calling send_text_message(" + str(event_body) + ", " + session_id + ")")
         response = send_text_message(event_body, session_id)
@@ -211,7 +210,7 @@ def get_slot_values_from_transfer_to_action_event(response):
             # MS will return both user defined and internal context values in this set - internal variables are
             # helpfully prefixed with 'va_' so we'll presume that any variable that's NOT prefixed with 'va_' is meant
             # to be returned as a detected slot!
-            if key.startswith('va_'):
+            if not key.startswith('va_'):
                 rv[key] = response['value'][key]
 
     return rv
@@ -225,7 +224,8 @@ def get_first_response_type(generic_response):
 
 def convert_text_response_to_message_format(response):
     new_msg = dict()
-    if 'textFormat' in response and response['textFormat'] == 'markdown':
+    # if 'textFormat' in response and response['textFormat'] == 'markdown':
+    if 'textFormat' in response:
         if 'text' in response:
             new_msg['type'] = 'text'
             new_msg['text'] = response['text']
